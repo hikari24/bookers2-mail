@@ -1,4 +1,5 @@
 <h5>コメント一覧</h5>
+    <div id="comments_area">
 
    	<% @book.post_comments.each do |post_comment| %>
         <div class="avatar">
@@ -10,6 +11,7 @@
         </div>
         <div class="comment-entry"><%= post_comment.comment %></div>
         <%if post_comment.user == current_user %>
-            <p><%= link_to '削除',book_post_comments_path(@book,post_comment), method: :delete,data: {confirm:'削除してもよろしいですか？'}%></p>
+            <p><%= link_to '削除',book_post_comments_path(@book,post_comment), method: :delete %></p>
         <% end %>
     <% end %>
+    </div>
